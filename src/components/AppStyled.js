@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import {NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
-export const Link = styled(NavLink) `
-color: black;
-`
+export const Main = styled.div`
+  margin-left: 15px;
+  margin-right: 15px;
+`;
