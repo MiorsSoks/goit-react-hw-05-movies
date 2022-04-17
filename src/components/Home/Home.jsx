@@ -9,7 +9,7 @@ export default function Home() {
     fetchTitles().then(responce => {setMovies(responce)})
   }, []);
 
-  console.log(movies);
+  // console.log(movies);
   return (
     <>
       <h2>Tranding today</h2>
