@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { fetchTitles } from '../API/Themoviedb-api';
+import { Link, useLocation } from 'react-router-dom';
+import { fetchTrendTitles } from '../API/Themoviedb-api';
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
+  const location = useLocation()
   useEffect(() => {
-    fetchTitles().then(responce => {setMovies(responce)})
+    fetchTrendTitles().then(responce => {setMovies(responce)})
   }, []);
 
-  // console.log(movies);
   return (
     <>
       <h2>Tranding today</h2>
@@ -17,7 +16,7 @@ export default function Home() {
         {movies.map(title => {
           return (
             <li key={title.id}>
-              <Link to={`movies/${title.id}`}>{title.title}</Link>
+              <Link to={`movies/${title.id}`} state={{ from: location }}>{title.title}</Link>
             </li>
           );
         })}

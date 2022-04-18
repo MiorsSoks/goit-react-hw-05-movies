@@ -1,6 +1,7 @@
 import { fetchMovieId } from '../API/Themoviedb-api';
 import { useEffect, useState } from 'react';
 import { useParams, Link, Outlet } from 'react-router-dom';
+import BackLink from '../BackLink'
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -17,6 +18,7 @@ export default function MovieDetailsPage() {
     <>
       {movie && (
         <div>
+          <div><BackLink/></div>
           {movie.poster_path ? <img src={basePageUrl + movie.poster_path} alt="poster" /> : <img src={noPoster} alt="poster" />}
           <h2>{movie.title + ` (${movie.release_date.slice(0, 4)})`}</h2>
           <h3>Overview</h3>
