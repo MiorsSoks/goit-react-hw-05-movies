@@ -9,11 +9,25 @@ export default function Reviews() {
   useEffect(() => {
     fetchReviews(movieId).then(setReviews);
   }, [movieId]);
-  console.log(reviews);
 
-    return <>
-        {reviews && <div><ul>
-        {reviews.length !== 0 ? reviews.map(review => (<li key={review.id}><b>Author: {review.author}</b><p>{review.content}</p></li>)) : <p>We don`t have any reviews for this movie</p>}
-        </ul></div>}
-    </>;
+  return (
+    <>
+      {reviews && (
+        <div>
+          <ul>
+            {reviews.length !== 0 ? (
+              reviews.map(review => (
+                <li key={review.id}>
+                  <b>Author: {review.author}</b>
+                  <p>{review.content}</p>
+                </li>
+              ))
+            ) : (
+              <p>We don`t have any reviews for this movie</p>
+            )}
+          </ul>
+        </div>
+      )}
+    </>
+  );
 }

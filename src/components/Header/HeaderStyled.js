@@ -1,16 +1,5 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 
-
-export const Link = styled(NavLink)`
-  color: black;
-  text-decoration: none;
-  font-size: 25px;
-  cursor: pointer;
-  :hover {
-    color: orangered;
-  }
-`;
 export const Nav = styled.nav`
   padding: 10px 0 10px 0;
 `;

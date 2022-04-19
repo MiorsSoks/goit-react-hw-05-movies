@@ -1,8 +1,8 @@
-import { useLocation } from 'react-router-dom';
-import { FaArrowLeft } from 'react-icons/fa'
+import { useLocation} from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 import { Link } from './BackLink.styled';
 
-export default function BackLink  ()  {
+export default function BackLink() {
   const location = useLocation();
   return (
     <Link to={location?.state?.from ?? '/movies'}>
@@ -10,4 +10,10 @@ export default function BackLink  ()  {
       Go back
     </Link>
   );
-};
+// return (
+//     <>
+//       <button onClick={() => navigate(-1)}>go back</button>
+//     </>
+//   );
+}
+

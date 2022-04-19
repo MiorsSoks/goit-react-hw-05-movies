@@ -6,9 +6,8 @@ export const Link = styled(RouterLink)`
   align-items: center;
   gap: 8px;
   padding: 4px 8px;
-  margin-bottom: 16px;
+  margin-bottom: 1px;
   text-decoration: none;
-  text-transform: uppercase;
   color: #010101;
   :hover {
     color: #2196f3;

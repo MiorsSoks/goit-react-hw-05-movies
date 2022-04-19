@@ -1,5 +1,6 @@
-import { Link, Nav, NavItem, HeaderContainer } from './HeaderStyled';
-
+import { Nav, NavItem, HeaderContainer } from './HeaderStyled';
+import { NavLink } from 'react-router-dom';
+import './Header.css';
 export default function Header() {
   return (
     <>
@@ -7,10 +8,14 @@ export default function Header() {
         <Nav>
           <ul>
             <NavItem>
-              <Link to="/">Home</Link>
+              <NavLink to="/" className="notActive">
+                Home
+              </NavLink>
             </NavItem>
             <NavItem>
-              <Link to="/movies">Movies</Link>
+              <NavLink to="/movies" className="notActive">
+                Movies
+              </NavLink>
             </NavItem>
           </ul>
         </Nav>
