@@ -1,4 +1,4 @@
-import { fetchMovie } from '../API/Themoviedb-api';
+import { fetchMovie } from '../../components/API/Themoviedb-api';
 import { useState, useEffect } from 'react';
 import { Link, useSearchParams, useLocation } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -17,7 +17,7 @@ export default function SearchBar() {
     if (currentQuery) {
       fetchMovie(currentQuery)
         .then(setMovies)
-        .finally(setStateMashine('loaded'));
+        .finally(()=>setStateMashine('loaded'));
     }
   }, [currentQuery]);
 

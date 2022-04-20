@@ -1,20 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
 import { Main } from 'components/AppStyled';
 import Header from './Header';
-// import Home from '../views/Home';
-// import Movies from '../views/Movies';
-import MovieDetailsPage from './MovieDetailsPage';
-import Cast from './Cast';
-import Reviews from './Reviews';
-import SearchBar from './SearchBar';
-import { createAsyncView } from '../helpers/createAsyncView'
-import {createAsyncComponent, createAsyncDefaultComponent} from '../helpers/createAsyncComponent'
+import { createAsyncView } from '../helpers/createAsyncView';
 import { Suspense } from 'react';
 
 const Home = createAsyncView('Home');
 const Movies = createAsyncView('Movies');
-
-// const MovieDetailsPage = createAsyncDefaultComponent('MovieDetailsPage')
+const MovieDetailsPage = createAsyncView('MovieDetailsPage');
+const SearchBar = createAsyncView('SearchBar');
+const Cast = createAsyncView('Cast');
+const Reviews = createAsyncView('Reviews');
 
 
 export const App = () => {

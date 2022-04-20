@@ -1,4 +1,4 @@
-import { fetchMovieId } from '../API/Themoviedb-api';
+import { fetchMovieId } from '../../components/API/Themoviedb-api';
 import { useEffect, useState } from 'react';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import {
@@ -8,13 +8,12 @@ import {
   ImageBlock,
   InfoImageBlock,
 } from './MovieDetailsPageStyled';
-import BackLink from '../BackLink';
+import BackLink from '../../components/BackLink';
 
 export default function MovieDetailsPage() {
-    const thisLocation = useLocation()
+    const location = useLocation()
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
-  const [location, setLocation] = useState(thisLocation)
   const basePageUrl = 'https://image.tmdb.org/t/p/w300';
   const noPoster =
     'https://sd.keepcalms.com/i-w600/keep-calm-poster-not-found.jpg';
@@ -22,8 +21,6 @@ export default function MovieDetailsPage() {
   useEffect(() => {
     fetchMovieId(movieId).then(setMovie);
   }, [movieId]);
-  console.log(location)
-  console.log(thisLocation)
   return (
     <>
       {movie && (
@@ -57,12 +54,12 @@ export default function MovieDetailsPage() {
           <p>Additional Information</p>
           <ul>
             <li>
-              <Link to="cast" state={{ from: location }}>
+              <Link to="cast" state={{from: location?.state?.from || "/" }}>
                 Cast
               </Link>
             </li>
             <li>
-              <Link to="reviews" state={{ from: location }}>
+              <Link to="reviews" state={{from: location?.state?.from || "/" }}>
                 Reviews
               </Link>
             </li>

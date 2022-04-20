@@ -47,5 +47,11 @@ fetchMovieId.propTypes = {
 
 fetchCast.propTypes = {
   movieId: PropTypes.number.isRequired,
+}
+fetchReviews.propTypes = {
+  movieId: PropTypes.number.isRequired,
+};
+fetchMovie.propTypes = {
+  movieId: PropTypes.string.isRequired,
 };
 

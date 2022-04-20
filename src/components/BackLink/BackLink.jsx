@@ -5,15 +5,10 @@ import { Link } from './BackLink.styled';
 export default function BackLink() {
   const location = useLocation();
   return (
-    <Link to={location?.state?.from ?? '/movies'}>
+    <Link to={location?.state?.from ?? '/'}>
       <FaArrowLeft />
       Go back
     </Link>
   );
-// return (
-//     <>
-//       <button onClick={() => navigate(-1)}>go back</button>
-//     </>
-//   );
 }
 

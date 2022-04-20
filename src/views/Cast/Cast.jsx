@@ -1,4 +1,4 @@
-import { fetchCast } from '../API/Themoviedb-api';
+import { fetchCast } from '../../components/API/Themoviedb-api';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 

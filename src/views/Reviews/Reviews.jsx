@@ -1,4 +1,4 @@
-import { fetchReviews } from '../API/Themoviedb-api';
+import { fetchReviews } from '../../components/API/Themoviedb-api';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
