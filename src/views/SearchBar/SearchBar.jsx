@@ -1,8 +1,8 @@
 import { fetchMovie } from '../../components/API/Themoviedb-api';
 import { useState, useEffect } from 'react';
-import { Link, useSearchParams, useLocation } from 'react-router-dom';
+import { NavLink, useSearchParams, useLocation } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import { List, SearchForm, Button, Input } from './SearchBarStyled';
+import { List, SearchForm, Button, Input, Item } from './SearchBarStyled';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function SearchBar() {
@@ -57,11 +57,11 @@ export default function SearchBar() {
         <div>
           <List>
             {movies.map(movie => (
-              <li key={movie.id}>
-                <Link to={`${movie.id}`} state={{ from: location }}>
+              <Item key={movie.id}>
+                <NavLink to={`${movie.id}`} state={{ from: location }} className="notActive">
                   {movie.title}
-                </Link>
-              </li>
+                </NavLink>
+              </Item>
             ))}
           </List>
         </div>

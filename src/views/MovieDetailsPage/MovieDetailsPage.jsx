@@ -1,6 +1,6 @@
 import { fetchMovieId } from '../../components/API/Themoviedb-api';
 import { useEffect, useState } from 'react';
-import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
+import { useParams, NavLink, Outlet, useLocation } from 'react-router-dom';
 import {
   List,
   ListItem,
@@ -54,14 +54,14 @@ export default function MovieDetailsPage() {
           <p>Additional Information</p>
           <ul>
             <li>
-              <Link to="cast" state={{from: location?.state?.from || "/" }}>
+              <NavLink to="cast" state={{from: location?.state?.from || "/" }} className="notActive">
                 Cast
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="reviews" state={{from: location?.state?.from || "/" }}>
+              <NavLink to="reviews" state={{from: location?.state?.from || "/" }} className="notActive">
                 Reviews
-              </Link>
+              </NavLink>
             </li>
           </ul>
           <hr />

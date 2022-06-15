@@ -10,6 +10,6 @@ export const Link = styled(RouterLink)`
   text-decoration: none;
   color: #010101;
   :hover {
-    color: #2196f3;
+    color: white;
   }
 `;

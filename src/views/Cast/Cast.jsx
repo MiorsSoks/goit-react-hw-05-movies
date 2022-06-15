@@ -1,6 +1,7 @@
 import { fetchCast } from '../../components/API/Themoviedb-api';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import {List, Img, Item} from './Cast.styled'
 
 export default function Cast() {
   const { movieId } = useParams();
@@ -16,19 +17,19 @@ export default function Cast() {
     <>
       {cast && (
         <div>
-          <ul>
+          <List>
             {cast.cast.map(actor => (
-              <li key={actor.id}>
+              <Item key={actor.id}>
                 {actor.profile_path ? (
-                  <img src={basePageUrl + actor.profile_path} alt="actor" />
+                  <Img src={basePageUrl + actor.profile_path} alt="actor" />
                 ) : (
-                  <img src={noPhoto} alt="actor" />
+                  <Img src={noPhoto} alt="actor" />
                 )}
                 <p>{actor.name}</p>
                 <p>Character: {actor.character}</p>
-              </li>
+              </Item>
             ))}
-          </ul>
+          </List>
         </div>
       )}
     </>

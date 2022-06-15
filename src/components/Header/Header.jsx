@@ -1,6 +1,5 @@
 import { Nav, NavItem, HeaderContainer } from './HeaderStyled';
 import { NavLink } from 'react-router-dom';
-import './Header.css';
 export default function Header() {
   return (
     <>

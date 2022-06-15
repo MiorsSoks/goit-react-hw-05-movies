@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { fetchTrendTitles } from '../../components/API/Themoviedb-api';
-import { List } from './HomeStyled';
+import { List, Item } from './HomeStyled';
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -18,11 +18,11 @@ export default function Home() {
       <List>
         {movies.map(title => {
           return (
-            <li key={title.id}>
-              <Link to={`movies/${title.id}`} state={{ from: location }}>
+            <Item key={title.id}>
+              <NavLink to={`movies/${title.id}`} state={{ from: location }} className="notActive">
                 {title.title}
-              </Link>
-            </li>
+              </NavLink>
+            </Item>
           );
         })}
       </List>
